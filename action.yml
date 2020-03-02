@@ -9,6 +9,14 @@ inputs:
     description: 'what to say in trigger commit message'
     default: 'triggered'
     required: false
+  git_user:
+    description: 'user to send commit from'
+    default: 'gh'
+    required: false
+  git_email:
+    description: 'user email to send commit from'
+    default: 'gh@gh.gh'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
