@@ -6,7 +6,7 @@ LABEL \
   "repository"="https://github.com/yellowmegaman/prtrigger"
 
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
-  apk add --no-cache git hub curl jq
+  apk add --no-cache git hub curl jq bash
 
 ADD *.sh /
 
