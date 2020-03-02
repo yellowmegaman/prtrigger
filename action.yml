@@ -1,0 +1,16 @@
+name: 'GitHub Pull Request Rechecker'
+author: 'Dmitry Rozhdestvenski <yellowmegaman@gmail.com>'
+description: 'Create pull request'
+branding:
+  icon: 'wind'
+  color: 'yellow'
+inputs:
+  commit_message:
+    description: 'what to say in trigger commit message'
+    default: 'triggered'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    GITHUB_TOKEN: ${{ inputs.github_token }}
