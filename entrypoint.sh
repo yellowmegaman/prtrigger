@@ -10,4 +10,4 @@ fi
 echo "$GITHUB_REPOSITORY"
 echo "$GITHUB_ACTOR"
 
-curl -s -H "Accept: application/vnd.github.v3+json" -X GET "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls" | jq -r '.[].head.ref'
+curl -s -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -H "Accept: application/vnd.github.v3+json" -X GET "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls" | jq -r '.[].head.ref'
