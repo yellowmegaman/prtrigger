@@ -10,7 +10,4 @@ fi
 echo "$GITHUB_REPOSITORY"
 echo "$GITHUB_ACTOR"
 
-apt update
-apt install curl jq -y
-
 curl -s -H "Accept: application/vnd.github.v3+json" -X GET "https://api.github.com/repos/$GITHUB_ACTOR/$GITHUB_REPOSITORY/pulls" | jq -r '.[].head.ref'
